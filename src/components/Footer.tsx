@@ -13,7 +13,7 @@ import {
 } from '@/components/icons/social'
 
 const columns = [
-  { title: 'Explore', links: [['About', '/about'], ['Our Work', '/programs'], ['Campaigns', '/campaigns']] },
+  { title: 'Explore', links: [['About', '/about'], ['Our Work', '/programs'], ['Campaigns', '/campaigns'], ['FAQ', '/faq']] },
   { title: 'Get Involved', links: [['Volunteer', '/volunteer'], ['Events', '/events'], ['Donate', '/donate'], ['Contact', '/contact']] },
 ] as const
 

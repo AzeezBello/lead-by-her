@@ -13,6 +13,7 @@ const links = [
   ['Our Work', '/programs'],
   ['Campaigns', '/campaigns'],
   ['Events', '/events'],
+  ['FAQ', '/faq'],
   ['Get Involved', '/volunteer'],
 ] as const
 

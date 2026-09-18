@@ -14,12 +14,15 @@ export function Reveal({
   as?: 'div' | 'span'
 }) {
   const ref = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState(() => typeof IntersectionObserver === 'undefined')
+  const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    if (typeof IntersectionObserver === 'undefined') return
     const el = ref.current
     if (!el) return
+    if (typeof IntersectionObserver === 'undefined') {
+      const id = requestAnimationFrame(() => setVisible(true))
+      return () => cancelAnimationFrame(id)
+    }
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
