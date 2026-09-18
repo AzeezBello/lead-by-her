@@ -4,12 +4,12 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 
 const campaigns = [
-  ['Education for Every Child', '₦10,000,000', '75%', '₦7.5M'],
-  ['Community Health Initiative', '₦15,000,000', '48%', '₦7.2M'],
-  ['Empowering Young People', '₦8,000,000', '62%', '₦5M'],
+  ['Education for Every Girl', '₦10,000,000', '75%', '₦7.5M'],
+  ['Leadership Bootcamp Fund', '₦15,000,000', '48%', '₦7.2M'],
+  ['Skills for Her Future', '₦8,000,000', '62%', '₦5M'],
 ] as const
 
-const gradients = ['from-green-300 to-stone-100', 'from-amber-300 to-stone-100', 'from-green-200 to-stone-100']
+const gradients = ['from-forest-300 to-stone-100', 'from-sage-300 to-stone-100', 'from-forest-200 to-stone-100']
 
 export default function Campaigns() {
   return (

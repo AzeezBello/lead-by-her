@@ -1,10 +1,9 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { SectionTitle } from '@/components/SectionTitle'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 
-const events = ['Community Outreach Day', 'Giving Back Fundraiser', 'Youth Skills Workshop'] as const
+const events = ['Community Outreach Day', 'Leadership Bootcamp', 'Skills Workshop for Girls'] as const
 
 export default function Events() {
   return (
@@ -34,30 +33,6 @@ export default function Events() {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        <div className="mt-16">
-          <div className="text-xs font-bold tracking-[0.16em] text-primary uppercase">From our archive</div>
-          <h2 className="serif my-2 text-[27px]">A look back at past outreach.</h2>
-          <Card className="mt-5 overflow-hidden rounded-3xl py-0">
-            <Image
-              src="/images/The Giving Back Project.png"
-              alt="The Giving Back Project community outreach event in Makoko, 30 December 2022"
-              width={3650}
-              height={2618}
-              className="w-full object-cover"
-            />
-            <CardContent className="p-6">
-              <p className="text-muted-foreground">
-                Community outreach in Makoko, 30 December 2022. Bank details shown in this archived flyer were specific
-                to that appeal — for current donations, please use the{' '}
-                <Link href="/donate" className="font-bold text-primary">
-                  secure donate page
-                </Link>
-                .
-              </p>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>

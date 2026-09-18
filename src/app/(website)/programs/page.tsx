@@ -2,21 +2,21 @@ import Link from 'next/link'
 import { Card, CardContent } from '@/components/ui/card'
 
 const programs = [
-  'Education & Learning',
-  'Community Health',
-  'Youth Empowerment',
-  'Livelihoods & Skills',
-  'Women & Families',
-  'Emergency Community Support',
+  'Education',
+  'Leadership',
+  'Welfare',
+  'Wellbeing',
+  'Skills Development',
+  'Mentorship & Advocacy',
 ] as const
 
 const gradients = [
-  'from-green-200 to-stone-100',
-  'from-amber-200 to-stone-100',
-  'from-green-300 to-stone-100',
-  'from-amber-300 to-stone-100',
-  'from-green-200 to-amber-100',
-  'from-amber-200 to-green-100',
+  'from-forest-200 to-stone-100',
+  'from-sage-200 to-stone-100',
+  'from-forest-300 to-stone-100',
+  'from-sage-300 to-stone-100',
+  'from-forest-200 to-sage-100',
+  'from-sage-200 to-forest-100',
 ]
 
 export default function Programs() {
@@ -29,7 +29,7 @@ export default function Programs() {
             Programs designed for lasting impact.
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            [Placeholder] Explore the areas where The Giving Back Project focuses its energy and resources.
+            [Placeholder] Explore the pillars through which Lead by Her invests in women and young girls.
           </p>
         </div>
       </section>

@@ -6,44 +6,44 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 
 const stats = [
-  ['10,000+', 'People reached', Users],
+  ['10,000+', 'Women & girls reached', Users],
   ['25+', 'Communities served', Globe2],
-  ['50+', 'Projects completed', HeartHandshake],
-  ['500+', 'Volunteers', HandHeart],
+  ['50+', 'Programs completed', HeartHandshake],
+  ['500+', 'Volunteers & mentors', HandHeart],
 ] as const
 
 const programs = [
-  ['Education & Learning', 'Creating pathways to learning and opportunity for children and young people.'],
-  ['Community Health', 'Supporting healthier communities through outreach, awareness, and practical support.'],
-  ['Youth Empowerment', 'Equipping young people with skills, confidence, and opportunities to thrive.'],
+  ['Education', 'Expanding access to learning so every girl can stay in school and reach her full potential.'],
+  ['Leadership', 'Building the confidence and skills young women need to lead in their communities.'],
+  ['Skills & Welfare', 'Practical training, welfare support and wellbeing programs that open doors to independence.'],
 ] as const
 
 const posts = [
-  ['Impact Story', 'How Small Acts of Giving Create Big Change'],
-  ['News & Updates', 'Inside Our Latest Community Outreach Project'],
-  ['Insights', 'Five Ways You Can Give Back to Your Community'],
+  ['Impact Story', 'How a Scholarship Changed One Girl’s Path'],
+  ['News & Updates', 'Inside Our Latest Leadership Bootcamp'],
+  ['Insights', 'Five Ways to Support Women in Your Community'],
 ] as const
 
-const programGradients = ['from-green-200 to-green-100', 'from-amber-200 to-green-100', 'from-green-300 to-amber-100']
-const postGradients = ['from-green-200 to-stone-100', 'from-amber-200 to-stone-100', 'from-stone-300 to-stone-100']
+const programGradients = ['from-forest-200 to-forest-100', 'from-sage-200 to-forest-100', 'from-forest-300 to-sage-100']
+const postGradients = ['from-forest-200 to-stone-100', 'from-sage-200 to-stone-100', 'from-stone-300 to-stone-100']
 
 export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-green-900 via-green-700 to-amber-500 py-28 text-white">
+      <section className="bg-gradient-to-br from-forest-900 via-forest-700 to-sage-500 py-28 text-white">
         <div className="container">
           <div className="max-w-3xl">
-            <Badge className="bg-amber-400/90 text-green-950 hover:bg-amber-400/90">Together, We Give Back</Badge>
+            <Badge className="bg-sage-400/90 text-forest-950 hover:bg-sage-400/90">Empowering Women & Young Girls</Badge>
             <h1 className="serif mt-4 text-[clamp(52px,8vw,88px)] leading-[0.96] font-normal">
-              Creating change that reaches beyond today.
+              Lead by her. Led by her.
             </h1>
-            <p className="mt-6 max-w-xl text-[19px] leading-relaxed text-green-50/90">
-              [Placeholder] The Giving Back Project works alongside communities to create opportunity, support
-              people, and build a more hopeful future.
+            <p className="mt-6 max-w-xl text-[19px] leading-relaxed text-forest-50/90">
+              [Placeholder] Lead by Her Empowerment Initiative works alongside women and young girls in Nigeria —
+              through education, leadership, welfare, wellbeing and skills — with impact beyond borders.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild size="lg" className="rounded-full bg-white text-green-800 hover:bg-green-50">
+              <Button asChild size="lg" className="rounded-full bg-white text-forest-800 hover:bg-forest-50">
                 <Link href="/donate">
                   Donate Now <ArrowRight size={17} />
                 </Link>
@@ -79,7 +79,7 @@ export default function Home() {
           <SectionTitle
             eyebrow="Our Work"
             title="Practical action. Human impact."
-            text="[Placeholder] Explore the programs and projects through which The Giving Back Project partners with communities."
+            text="[Placeholder] Explore the programs through which Lead by Her invests in women and young girls."
           />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {programs.map(([t, d], i) => (
@@ -109,10 +109,10 @@ export default function Home() {
           />
           <Card className="overflow-hidden rounded-3xl py-0">
             <div className="grid md:grid-cols-2">
-              <div className="min-h-[240px] bg-gradient-to-br from-green-300 to-amber-200 md:min-h-[380px]" />
+              <div className="min-h-[240px] bg-gradient-to-br from-forest-300 to-sage-200 md:min-h-[380px]" />
               <div className="p-8 md:p-10">
                 <div className="text-xs font-bold tracking-[0.16em] text-primary uppercase">Education & Opportunity</div>
-                <h3 className="serif mt-2 text-4xl leading-tight">Education for Every Child</h3>
+                <h3 className="serif mt-2 text-4xl leading-tight">Education for Every Girl</h3>
                 <p className="mt-3 leading-relaxed text-muted-foreground">
                   [Placeholder campaign description explaining the need, the intervention, and the expected impact.]
                 </p>
@@ -155,13 +155,13 @@ export default function Home() {
       </section>
 
       {/* CTA band */}
-      <section className="bg-gradient-to-br from-green-900 via-green-700 to-amber-500 py-20 text-white">
+      <section className="bg-gradient-to-br from-forest-900 via-forest-700 to-sage-500 py-20 text-white">
         <div className="container flex flex-wrap items-center justify-between gap-8">
           <div>
-            <Badge className="bg-amber-400/90 text-green-950 hover:bg-amber-400/90">Your Support Matters</Badge>
-            <h2 className="serif mt-3 text-5xl">There are many ways to give back.</h2>
+            <Badge className="bg-sage-400/90 text-forest-950 hover:bg-sage-400/90">Your Support Matters</Badge>
+            <h2 className="serif mt-3 text-5xl">There are many ways to get involved.</h2>
           </div>
-          <Button asChild size="lg" className="rounded-full bg-white text-green-800 hover:bg-green-50">
+          <Button asChild size="lg" className="rounded-full bg-white text-forest-800 hover:bg-forest-50">
             <Link href="/volunteer">Get Involved</Link>
           </Button>
         </div>

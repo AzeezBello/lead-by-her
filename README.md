@@ -1,10 +1,13 @@
-# The Giving Back Project
+# Lead by Her
 
-A production-ready NGO website starter built with Next.js, TypeScript, Tailwind CSS, ShadCN-ready UI patterns, Supabase and Paystack.
+Website and admin dashboard for **Lead by Her Empowerment Initiative** — empowering women and young girls through
+education, leadership, welfare, wellbeing and skills, based in Nigeria with impact beyond borders
+([@leadbyherorg](https://www.instagram.com/leadbyherorg/)). Built with Next.js, TypeScript, Tailwind CSS, shadcn/ui,
+Supabase and Paystack.
 
 ## What's included
 
-- Responsive public NGO website
+- Responsive public site
 - About, team, leadership and board structure
 - Programs, projects and campaigns
 - Blog and events
@@ -104,5 +107,4 @@ Administrators can upload images and PDFs from `/admin/media`. Files are stored 
 
 ### Important
 
-The current donation engine implements **one-time donations**. The UI does not claim that monthly donations are active. Recurring donations can be added later using provider subscription plans/webhooks after the NGO decides its recurring-donation policy.
-# The-Giving-Back-Project
+The current donation engine implements **one-time donations**. The UI does not claim that monthly donations are active. Recurring donations can be added later using provider subscription plans/webhooks after the organization decides its recurring-donation policy.

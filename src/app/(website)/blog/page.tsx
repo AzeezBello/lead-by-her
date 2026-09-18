@@ -2,21 +2,21 @@ import Link from 'next/link'
 import { SectionTitle } from '@/components/SectionTitle'
 
 const posts = [
-  ['impact-story', 'How Small Acts of Giving Create Big Change'],
-  ['news-updates', 'Inside Our Latest Community Outreach Project'],
-  ['community', 'Building Stronger Communities Through Education'],
-  ['insights', 'Five Ways You Can Give Back to Your Community'],
+  ['impact-story', 'How a Scholarship Changed One Girl’s Path'],
+  ['news-updates', 'Inside Our Latest Leadership Bootcamp'],
+  ['community', 'Building Confidence Through Mentorship'],
+  ['insights', 'Five Ways to Support Women in Your Community'],
   ['project-update', 'What Your Support Made Possible This Month'],
-  ['news-updates', 'Meet the People Behind the Project'],
+  ['news-updates', 'Meet the Women Behind Lead by Her'],
 ] as const
 
 const gradients = [
-  'from-green-200 to-stone-100',
-  'from-amber-200 to-stone-100',
-  'from-green-300 to-stone-100',
-  'from-amber-300 to-stone-100',
-  'from-green-200 to-amber-100',
-  'from-amber-200 to-green-100',
+  'from-forest-200 to-stone-100',
+  'from-sage-200 to-stone-100',
+  'from-forest-300 to-stone-100',
+  'from-sage-300 to-stone-100',
+  'from-forest-200 to-sage-100',
+  'from-sage-200 to-forest-100',
 ]
 
 export default function Blog() {
@@ -27,14 +27,14 @@ export default function Blog() {
           <div className="text-xs font-bold tracking-[0.16em] text-primary uppercase">Stories · News · Insights</div>
           <h1 className="serif mt-3 text-[clamp(52px,7vw,78px)] leading-[0.98]">Stories from the work.</h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            [Placeholder] Follow projects, community stories, announcements, and ideas about giving back.
+            [Placeholder] Follow programs, community stories, announcements, and ideas about empowering women and girls.
           </p>
         </div>
       </section>
 
       <section className="section">
         <div className="container">
-          <SectionTitle eyebrow="Latest" title="From The Giving Back Project" />
+          <SectionTitle eyebrow="Latest" title="From Lead by Her" />
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {posts.map(([cat, t], i) => (
               <article key={t} className="flex flex-col">

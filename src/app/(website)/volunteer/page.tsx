@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { SectionTitle } from '@/components/SectionTitle'
 import { VolunteerForm } from './VolunteerForm'
 
@@ -9,15 +8,6 @@ export default function Volunteer() {
     <section className="section">
       <div className="container grid gap-14 md:grid-cols-2">
         <div>
-          <div className="mb-9 overflow-hidden rounded-3xl border border-border">
-            <Image
-              src="/images/Giving back project call for voluteers.png"
-              alt="The Giving Back Project — call for volunteers"
-              width={1201}
-              height={1201}
-              className="aspect-square w-full object-cover"
-            />
-          </div>
           <SectionTitle
             eyebrow="Get Involved"
             title="Give your time. Share your skills. Make a difference."

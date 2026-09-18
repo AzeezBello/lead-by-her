@@ -25,12 +25,12 @@ export function Navbar() {
       <div className="container flex h-[76px] items-center justify-between gap-5">
         <Link href="/" className="flex items-center">
           <Image
-            src="/images/logo-mark.png"
-            alt="The Giving Back Project"
-            width={1038}
-            height={448}
+            src="/images/logo-lbh.png"
+            alt="Lead by Her"
+            width={1327}
+            height={1134}
             priority
-            className="h-10 w-auto sm:h-11"
+            className="h-14 w-auto sm:h-16"
           />
         </Link>
 
@@ -60,7 +60,7 @@ export function Navbar() {
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px]">
             <SheetHeader>
-              <SheetTitle className="text-left font-serif">The Giving Back Project</SheetTitle>
+              <SheetTitle className="text-left font-serif">Lead by Her</SheetTitle>
             </SheetHeader>
             <nav className="flex flex-col gap-1 px-4">
               {links.map(([label, href]) => (

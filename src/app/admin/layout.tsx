@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type { LucideIcon } from 'lucide-react'
 import {
   BookOpen,
@@ -78,10 +79,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
     <SidebarProvider>
       <Sidebar collapsible="icon">
         <SidebarHeader className="gap-0 px-4 py-5">
-          <Link href="/admin" className="font-serif text-lg leading-tight text-sidebar-foreground">
-            The Giving Back
-            <br />
-            Project
+          <Link href="/admin">
+            <Image src="/images/logo-lbh-white.png" alt="Lead by Her" width={1327} height={1134} className="h-12 w-auto" />
           </Link>
           <div className="mt-2 text-[10px] tracking-[.18em] text-sidebar-foreground/50 uppercase">
             Admin workspace
@@ -120,8 +119,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       <SidebarInset>
         <header className="flex h-14 items-center gap-3 border-b border-border bg-card px-4 md:hidden">
           <SidebarTrigger />
-          <Link href="/admin" className="font-serif text-base">
-            The Giving Back Project
+          <Link href="/admin">
+            <Image src="/images/logo-lbh.png" alt="Lead by Her" width={1327} height={1134} className="h-9 w-auto" />
           </Link>
         </header>
         {children}

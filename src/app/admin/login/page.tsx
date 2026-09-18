@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 import { ArrowRight, Loader2, LockKeyhole } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/button'
@@ -35,7 +36,7 @@ export default function LoginPage() {
     <main className="grid min-h-screen bg-background lg:grid-cols-2">
       <section className="hidden flex-col justify-between bg-primary p-16 text-primary-foreground lg:flex">
         <div>
-          <div className="text-sm font-bold tracking-[.2em] uppercase">The Giving Back Project</div>
+          <Image src="/images/logo-lbh-white.png" alt="Lead by Her" width={1327} height={1134} className="h-14 w-auto" />
           <h1 className="mt-10 font-serif text-6xl leading-tight">
             Admin
             <br />
@@ -45,7 +46,7 @@ export default function LoginPage() {
             Manage campaigns, stories, programs, volunteers, events and donations from one secure workspace.
           </p>
         </div>
-        <p className="text-sm text-primary-foreground/50">© 2026 The Giving Back Project</p>
+        <p className="text-sm text-primary-foreground/50">© 2026 Lead by Her Empowerment Initiative</p>
       </section>
 
       <section className="flex items-center justify-center p-6">

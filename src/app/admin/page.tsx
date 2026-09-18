@@ -103,7 +103,7 @@ export default async function Dashboard() {
                       <div className="font-semibold">
                         {d.currency || 'NGN'} {Number(d.amount).toLocaleString()}
                       </div>
-                      <div className="text-xs text-green-700">{d.payment_status}</div>
+                      <div className="text-xs text-forest-700">{d.payment_status}</div>
                     </div>
                   </div>
                 ))}
