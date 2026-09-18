@@ -1,9 +1,19 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { SectionTitle } from '@/components/SectionTitle'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 
 const events = ['Community Outreach Day', 'Leadership Bootcamp', 'Skills Workshop for Girls'] as const
+
+const moments = [
+  'book-distribution-classroom.jpg',
+  'students-with-books-hijab.jpg',
+  'community-book-handout.jpg',
+  'outreach-team-photo.jpg',
+  'students-studying-desks.jpg',
+  'team-school-visit-group.jpg',
+] as const
 
 export default function Events() {
   return (
@@ -33,6 +43,35 @@ export default function Events() {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        <div className="mt-16">
+          <div className="text-xs font-bold tracking-[0.16em] text-primary uppercase">Recent Moments</div>
+          <h2 className="serif my-2 text-[27px]">A look back at recent outreach.</h2>
+          <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3">
+            <div className="relative aspect-square overflow-hidden rounded-2xl bg-black">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                aria-label="Lead by Her community outreach moment"
+                className="h-full w-full object-cover"
+              >
+                <source src="/videos/program-moment.mp4" type="video/mp4" />
+              </video>
+            </div>
+            {moments.map((img) => (
+              <div key={img} className="relative aspect-square overflow-hidden rounded-2xl">
+                <Image
+                  src={`/images/gallery/${img}`}
+                  alt="Lead by Her community outreach moment"
+                  fill
+                  className="object-cover transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { SectionTitle } from '@/components/SectionTitle'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -35,9 +36,17 @@ export default function About() {
 
       {/* Story */}
       <section className="section">
-        <div className="container grid gap-14 md:grid-cols-2">
-          <SectionTitle eyebrow="Who We Are" title="Built around people and possibility." />
+        <div className="container grid items-center gap-14 md:grid-cols-2">
+          <div className="relative h-[340px] overflow-hidden rounded-3xl sm:h-[440px]">
+            <Image
+              src="/images/gallery/community-book-handout.jpg"
+              alt="Lead by Her team distributing books to a community of women and girls"
+              fill
+              className="object-cover"
+            />
+          </div>
           <div className="grid gap-5">
+            <SectionTitle eyebrow="Who We Are" title="Built around people and possibility." />
             <p className="text-[17px] leading-8 text-muted-foreground">
               [Placeholder organization story. This section will contain the NGO&apos;s history, founding purpose,
               communities served, and approach to creating sustainable impact.]

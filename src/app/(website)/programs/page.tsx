@@ -1,23 +1,15 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Card, CardContent } from '@/components/ui/card'
 
 const programs = [
-  'Education',
-  'Leadership',
-  'Welfare',
-  'Wellbeing',
-  'Skills Development',
-  'Mentorship & Advocacy',
+  ['Education', 'textbook-stack.jpg'],
+  ['Leadership', 'program-visit-group.jpg'],
+  ['Welfare', 'community-outreach-meeting.jpg'],
+  ['Wellbeing', 'sorting-donated-books.jpg'],
+  ['Skills Development', 'textbooks-display-couch.jpg'],
+  ['Mentorship & Advocacy', 'team-school-visit-group.jpg'],
 ] as const
-
-const gradients = [
-  'from-forest-200 to-stone-100',
-  'from-sage-200 to-stone-100',
-  'from-forest-300 to-stone-100',
-  'from-sage-300 to-stone-100',
-  'from-forest-200 to-sage-100',
-  'from-sage-200 to-forest-100',
-]
 
 export default function Programs() {
   return (
@@ -37,9 +29,11 @@ export default function Programs() {
       <section className="section pt-0">
         <div className="container">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {programs.map((p, i) => (
+            {programs.map(([p, img], i) => (
               <Card key={p} className="overflow-hidden rounded-3xl py-0">
-                <div className={`h-[230px] bg-gradient-to-br ${gradients[i]}`} />
+                <div className="relative h-[230px]">
+                  <Image src={`/images/gallery/${img}`} alt={p} fill className="object-cover" />
+                </div>
                 <CardContent className="p-6">
                   <div className="text-xs font-bold tracking-[0.16em] text-primary uppercase">Program 0{i + 1}</div>
                   <h2 className="serif my-2 text-[29px]">{p}</h2>
