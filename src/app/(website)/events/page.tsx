@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { SectionTitle } from '@/components/SectionTitle'
+import { Reveal } from '@/components/Reveal'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 
@@ -19,29 +20,33 @@ export default function Events() {
   return (
     <section className="section">
       <div className="container">
-        <SectionTitle
-          eyebrow="Events"
-          title="Come together. Take action. Make an impact."
-          text="[Placeholder] Discover upcoming community events, fundraisers, workshops, and outreach activities."
-        />
+        <Reveal>
+          <SectionTitle
+            eyebrow="Events"
+            title="Come together. Take action. Make an impact."
+            text="[Placeholder] Discover upcoming community events, fundraisers, workshops, and outreach activities."
+          />
+        </Reveal>
         <div className="grid gap-4">
           {events.map((e, i) => (
-            <Card key={e} className="rounded-2xl">
-              <CardContent className="flex flex-col items-start gap-5 p-6 sm:flex-row sm:items-center">
-                <div className="rounded-2xl bg-stone-100 px-4 py-3 text-center">
-                  <strong className="serif block text-3xl">{12 + i * 8}</strong>
-                  <div className="text-xs font-bold tracking-[0.16em] text-primary uppercase">SEP</div>
-                </div>
-                <div className="flex-1">
-                  <div className="text-xs font-bold tracking-[0.16em] text-primary uppercase">[Location]</div>
-                  <h2 className="serif my-1 text-[27px]">{e}</h2>
-                  <p className="text-muted-foreground">[Event description placeholder]</p>
-                </div>
-                <Button asChild variant="outline" className="rounded-full">
-                  <Link href="/contact">Details</Link>
-                </Button>
-              </CardContent>
-            </Card>
+            <Reveal key={e} delay={i * 80}>
+              <Card className="rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <CardContent className="flex flex-col items-start gap-5 p-6 sm:flex-row sm:items-center">
+                  <div className="rounded-2xl bg-stone-100 px-4 py-3 text-center">
+                    <strong className="serif block text-3xl">{12 + i * 8}</strong>
+                    <div className="text-xs font-bold tracking-[0.16em] text-primary uppercase">SEP</div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-xs font-bold tracking-[0.16em] text-primary uppercase">[Location]</div>
+                    <h2 className="serif my-1 text-[27px]">{e}</h2>
+                    <p className="text-muted-foreground">[Event description placeholder]</p>
+                  </div>
+                  <Button asChild variant="outline" className="rounded-full transition-transform hover:-translate-y-0.5">
+                    <Link href="/contact">Details</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </Reveal>
           ))}
         </div>
 
@@ -55,6 +60,7 @@ export default function Events() {
                 muted
                 loop
                 playsInline
+                preload="metadata"
                 aria-label="Lead by Her community outreach moment"
                 className="h-full w-full object-cover"
               >

@@ -1,13 +1,13 @@
 'use client'
 import { useState } from 'react'
-import { toast } from 'sonner'
-import { Loader2, CheckCircle2 } from 'lucide-react'
-import { createClient } from '@/lib/supabase/client'
+import { Mail } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
+
+const VOLUNTEER_EMAIL = 'info@leadbyher.org'
 
 const fields = [
   ['name', 'Full name', 'text'],
@@ -16,14 +16,14 @@ const fields = [
   ['interest', 'Area of interest', 'text'],
 ] as const
 
+const fieldClass = 'h-auto rounded-xl py-3.5'
+
 export function VolunteerForm() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
   const [interest, setInterest] = useState('')
   const [message, setMessage] = useState('')
-  const [loading, setLoading] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
 
   const values: Record<string, string> = { name, email, phone, interest }
   const setters: Record<string, (v: string) => void> = {
@@ -33,34 +33,13 @@ export function VolunteerForm() {
     interest: setInterest,
   }
 
-  async function submit(e: React.FormEvent) {
+  function submit(e: React.FormEvent) {
     e.preventDefault()
-    setLoading(true)
-    try {
-      const supabase = createClient()
-      const { error } = await supabase.from('volunteers').insert({ name, email, phone, interest, message })
-      if (error) throw error
-      setSubmitted(true)
-      toast.success("Thank you — your application has been received.")
-    } catch (err) {
-      toast.error(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  if (submitted) {
-    return (
-      <Card className="rounded-3xl">
-        <CardContent className="flex flex-col items-center gap-3 p-10 text-center">
-          <CheckCircle2 className="text-primary" size={40} />
-          <h2 className="serif text-3xl">Thank you for applying.</h2>
-          <p className="text-muted-foreground">
-            We have received your volunteer application and will be in touch soon.
-          </p>
-        </CardContent>
-      </Card>
+    const subject = encodeURIComponent(`Volunteer application — ${name}`)
+    const body = encodeURIComponent(
+      `Full name: ${name}\nEmail: ${email}\nPhone: ${phone}\nArea of interest: ${interest}\n\nAbout me:\n${message}`
     )
+    window.location.href = `mailto:${VOLUNTEER_EMAIL}?subject=${subject}&body=${body}`
   }
 
   return (
@@ -80,6 +59,7 @@ export function VolunteerForm() {
                 placeholder={label}
                 value={values[key]}
                 onChange={(e) => setters[key](e.target.value)}
+                className={fieldClass}
               />
             </div>
           ))}
@@ -87,17 +67,20 @@ export function VolunteerForm() {
             <Label htmlFor="message" className="text-sm font-bold">
               Tell us about yourself
             </Label>
-            <Textarea id="message" rows={5} value={message} onChange={(e) => setMessage(e.target.value)} />
+            <Textarea
+              id="message"
+              rows={5}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              className="rounded-xl py-3.5"
+            />
           </div>
-          <Button type="submit" size="lg" disabled={loading} className="rounded-full">
-            {loading ? (
-              <>
-                <Loader2 className="animate-spin" size={17} /> Submitting…
-              </>
-            ) : (
-              'Submit application'
-            )}
+          <Button type="submit" size="lg" className="h-auto rounded-full py-3.5 text-base">
+            <Mail size={17} /> Submit application
           </Button>
+          <p className="text-center text-xs text-muted-foreground">
+            Opens your email app addressed to {VOLUNTEER_EMAIL}.
+          </p>
         </form>
       </CardContent>
     </Card>

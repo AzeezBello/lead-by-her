@@ -76,7 +76,7 @@ export default function MediaPage() {
           <Card key={f.id} className="overflow-hidden p-0">
             {f.mime_type?.startsWith('image/') ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={f.file_url} alt={f.name} className="aspect-square w-full object-cover" />
+              <img src={f.file_url} alt={f.name} loading="lazy" className="aspect-square w-full object-cover" />
             ) : (
               <div className="grid aspect-square place-items-center gap-2 bg-muted text-sm text-muted-foreground">
                 <FileText size={22} />

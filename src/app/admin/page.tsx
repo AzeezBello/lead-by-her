@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { LucideIcon } from 'lucide-react'
-import { ArrowUpRight, BookOpen, HeartHandshake, Megaphone, Plus, Users } from 'lucide-react'
+import { ArrowUpRight, HeartHandshake, Megaphone, Plus, Users } from 'lucide-react'
 import { requireAdmin } from '@/lib/admin'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -14,11 +14,10 @@ type Stat = { label: string; value: number; icon: LucideIcon; href: string }
 
 export default async function Dashboard() {
   const { supabase, profile } = await requireAdmin()
-  const [campaigns, donations, volunteers, posts] = await Promise.all([
+  const [campaigns, donations, volunteers] = await Promise.all([
     count(supabase, 'campaigns'),
     count(supabase, 'donations'),
     count(supabase, 'volunteers'),
-    count(supabase, 'blog_posts'),
   ])
   const { data: recent } = await supabase
     .from('donations')
@@ -30,12 +29,10 @@ export default async function Dashboard() {
     { label: 'Campaigns', value: campaigns, icon: Megaphone, href: '/admin/campaigns' },
     { label: 'Donations', value: donations, icon: HeartHandshake, href: '/admin/donations' },
     { label: 'Volunteers', value: volunteers, icon: Users, href: '/admin/volunteers' },
-    { label: 'Blog posts', value: posts, icon: BookOpen, href: '/admin/blog' },
   ]
 
   const quickActions = [
     { label: 'Create campaign', href: '/admin/campaigns' },
-    { label: 'Publish blog post', href: '/admin/blog' },
     { label: 'Add team member', href: '/admin/team' },
     { label: 'Review volunteers', href: '/admin/volunteers' },
   ]
@@ -57,7 +54,7 @@ export default async function Dashboard() {
       </header>
 
       <div className="space-y-8 p-6 md:p-8">
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-3">
           {stats.map((stat) => (
             <Link key={stat.label} href={stat.href}>
               <Card className="transition hover:shadow-sm">

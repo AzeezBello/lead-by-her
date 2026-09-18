@@ -2,7 +2,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import type { LucideIcon } from 'lucide-react'
 import {
-  BookOpen,
   CalendarDays,
   FileText,
   FolderKanban,
@@ -47,7 +46,6 @@ const groups: NavGroup[] = [
       { label: 'Programs', href: '/admin/programs', icon: FolderKanban },
       { label: 'Projects', href: '/admin/projects', icon: FolderKanban },
       { label: 'Campaigns', href: '/admin/campaigns', icon: Megaphone },
-      { label: 'Blog', href: '/admin/blog', icon: BookOpen },
       { label: 'Media Library', href: '/admin/media', icon: FileText },
       { label: 'Events', href: '/admin/events', icon: CalendarDays },
     ],

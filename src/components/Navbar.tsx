@@ -13,7 +13,6 @@ const links = [
   ['Our Work', '/programs'],
   ['Campaigns', '/campaigns'],
   ['Events', '/events'],
-  ['Blog', '/blog'],
   ['Get Involved', '/volunteer'],
 ] as const
 
@@ -68,7 +67,7 @@ export function Navbar() {
                   <Link
                     href={href}
                     className={cn(
-                      'rounded-xl px-3 py-2.5 text-sm font-medium text-foreground/80 hover:bg-muted hover:text-foreground',
+                      'rounded-xl px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-muted hover:text-foreground',
                       pathname === href && 'bg-secondary text-secondary-foreground'
                     )}
                   >

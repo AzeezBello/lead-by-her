@@ -81,7 +81,7 @@ export default function DonationForm({ campaignId }: { campaignId?: string }) {
               <AlertDescription>{error}</AlertDescription>
             </Alert>
           )}
-          <Button disabled={loading} type="submit" size="lg" className={cn('rounded-full py-6 text-base')}>
+          <Button disabled={loading} type="submit" size="lg" className={cn('h-auto rounded-full py-3.5 text-base')}>
             {loading ? (
               <>
                 <Loader2 className="animate-spin" size={17} /> Connecting securely…
